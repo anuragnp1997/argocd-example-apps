@@ -33,23 +33,7 @@ spec:
       restartPolicy: Never
   backoffLimit: 0
 ---
-apiVersion: apps/v1
-kind: ReplicaSet
-metadata:
-  name: frontend
-spec:
-  replicas: 0
-  selector:
-    matchLabels:
-      tier: frontend
-  template:
-    metadata:
-      labels:
-        tier: frontend
-    spec:
-      containers:
-        - name: main
-          image: nginx:latest
+
 ---
 apiVersion: v1
 kind: Service
